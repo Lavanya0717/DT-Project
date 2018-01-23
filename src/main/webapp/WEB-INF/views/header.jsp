@@ -21,9 +21,7 @@
 <!--Navbar-->
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-full" style="background-color: #ffe4e1">
-<!-- <nav class="navbar navbar-dark purple navbar-fixed-top navbar-transparent" role="navigation"> -->
-<!-- <nav class="navbar navbar-ct-pink navbar-fixed-top navbar-transparent" role="navigation"> -->
-<!-- <nav id="navbar-red" class="navbar navbar-inverse navbar-static-top" role="navigation"> -->
+
      <div class="container">
 <ul class="nav navbar-nav">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-demo-navbar-collapse-1"/>

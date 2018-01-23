@@ -9,6 +9,12 @@
 	<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
 	</context-param>
  
+ <servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+ 
+ 
     <!-- <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
    </listener> -->
@@ -21,9 +27,6 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
  
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+	
  
 	</web-app>
