@@ -1,4 +1,4 @@
-package com.controller;
+package com.niit.bokayflorist.controller;
 
 import java.util.Map;
 
@@ -21,6 +21,7 @@ public class UserController {
 	@RequestMapping("/addUser")
 	public String addUser(@RequestParam Map<String,String> user1,Model m) {
 		
+	    
 		user.setEmail(user1.get("email"));
 		user.setAddress(user1.get("address"));
 		user.setCountry(user1.get("country"));

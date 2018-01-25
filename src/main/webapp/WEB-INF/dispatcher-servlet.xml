@@ -22,12 +22,5 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springf
 		</property>
 	</bean>
 	
-	<!-- <bean id="UserDaoImpl" class="com.bean.BokayFlorist.DaoImpl">
-        <property name="userDao" ref="userDao"></property>
-    </bean> -->
-	
-	
-	
-	
-	
+
 </beans>
