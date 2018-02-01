@@ -15,7 +15,21 @@ public class indexController {
 		return "index";
 	}
 	
+	/*@RequestMapping("/home")
+	public String home(){
+		return "home";
+	}
 	
+	@RequestMapping("/supplierManage")
+	public String supplierManage(){
+		return "supplierManage";
+	}
+	@RequestMapping("/addSupplier")
+	public String addSupplier(){
+		return "supplierManage";
+	}*/
+	
+}
 	
 	
 	
@@ -30,7 +44,7 @@ public class indexController {
 		 mv.addObject("users",userDao.list());		 		 
 	        return mv;
 	    }*/
-}
+
 
 	
 

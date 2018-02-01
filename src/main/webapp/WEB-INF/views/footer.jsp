@@ -9,36 +9,79 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
-</head>
-<body>
- <footer>
-<div class="container-fluid" style="padding-top:20px;padding-bottom:20px;background:#000066;font-size:25px">
-<div class="col-sm-6 text-center">
-<ul  style="list-style: none;">
-<li><a href="#" class="footlink">Contact Us</a></li>
-<li><a href="#" class="footlink">About Us</a></li>
-</ul>
-</div>
-<div class="col-sm-6 text-center">
-		<div class="btn-group">
-  <a href="https://www.facebook.com" class="btn btn-success" style="width:5em">
-  <i class="fa fa-facebook" style="font-size:40px;color:#fff"></i></a>
-  <a href="https://www.twitter.com" class="btn btn-success" style="width:5em">
-  <i class="fa fa-twitter" style="font-size:40px;color:#fff"></i></a>
-  <a href="https://plus.google.com" class="btn btn-success" style="width:5em">
-  <i class="fa fa-google-plus" style="font-size:40px;color:#fff"></i></a>
-  <a href="https://www.instagram.com/?hl=en" class="btn btn-success" style="width:5em">
-  <i class="fa fa-instagram" style="font-size:40px;color:#fff"></i></a>
-</div></div>
-</div>
-<nav class="navbar navbar-inverse">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Footer Page</title>
+<footer class="page-footer center-on-small-only mdb-color lighten-5">
+
+    <!--Footer Links-->
+    <div class="container">
+        <div class="row my-4">
+<div class="container-fluid" style="padding-top:50px;padding-bottom:20px;background:#ffe4e1;font-size:15px">
+            <!--First column-->
+            <div class="col-md-4 col-lg-4">
+                <h5 class="title mb-4 font-bold">Bokay Florist</h5>
+               <p>A flower bouquet is a collection of flowers in a creative arrangement. </p>
+            </div>
+            <!--/.First column-->
+
+           
+
+            <!--Second column-->
+            <div class="col-md-2 col-lg-2 ml-auto">
+                <h5 class="title mb-4 font-bold">About Us</h5>
+                <ul>
+                    <p><a href="#!">PROJECTS</a></p>
+                    <p><a href="#!">ABOUT US</a></p>
+                    <p><a href="#!">BLOG</a></p>
+                    <p><a href="#!">AWARDS</a></p>
+                </ul>
+            </div>
+            <!--/.Second column-->
+
+            
+
+            <!--Third column-->
+            <div class="col-md-4 col-lg-3">
+                <h5 class="title mb-4 font-bold">Address</h5>
+                <!--Info-->
+                <p>Bokay Florist 5255 Beechnut Houston, TX  77096 (713) 664-3418 || (800) 664-0336</p>
+            </div>
+            <!--/.Third column-->
+
+            
+
+            <!--Fourth column-->
+            <div class="col-md-2 col-lg-2 text-center">
+                <h5 class="title mb-4 font-bold">Follow Us</h5>
+                <!--Social buttons-->
+                <div class="social-section mt-2 ">
+                    <!--Facebook-->
+                    <a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a>
+                    <!--Twitter-->
+                    <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
+                    <!--Google +-->
+                    <a type="button" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"></i></a>
+                    <!--Dribbble-->
+                    <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+            <!--/.Fourth column-->
+
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <nav class="navbar navbar-inverse">
   <div class="container-fluid text-center">
 		<span style="color:#fff;font-size:15px"> © 2018 Copyright: <a href="http://www.bokayshop.com/"> bokayshop.com </a></span>
   </div>
 </nav>
+        </div>
+   
+    <!--/.Copyright-->
+
 </footer>
-</body>
-</html>
+<!--/.Footer-->
 </body>
 </html>

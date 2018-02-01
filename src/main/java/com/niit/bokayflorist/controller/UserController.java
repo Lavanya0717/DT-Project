@@ -3,13 +3,17 @@ package com.niit.bokayflorist.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.Dao.SupplierDao;
 import com.Dao.UserDao;
+import com.Model.Supplier;
 import com.Model.User;
 
+@Controller
 public class UserController {
 	
 	@Autowired
@@ -18,7 +22,9 @@ public class UserController {
 	UserDao userDao;
 	
 	
-	@RequestMapping("/addUser")
+	
+	
+	/*@RequestMapping("/addUser")
 	public String addUser(@RequestParam Map<String,String> user1,Model m) {
 		
 	    
@@ -33,5 +39,5 @@ public class UserController {
 		if(userDao.add(user))
 			return "redirect:login?id=3";
 		return "register";
-	}
+	}*/
 }
