@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<c:url var="e" value="/"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -57,7 +57,14 @@
       </ul> -->
       
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="home">Admin Home</a></li>
+          <li><a href="adminAdding">Add Details</a></li>
+		<li><a href="viewDetailsAdmin">View Details</a></li>
+		<%--  <li><a href="<c:url value="/perform_logout"/>">
+         <span class="glyphicon glyphicon-log-out"></span> Logout</a></li></c:if>
+        <c:if test='<%=(Boolean)session.getAttribute("loggedIn")==null%>'> --%>
+ <li><a href="${e}register"><span class="fa fa-user"></span> Register</a></li>
+      <li><a href="${e}login"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+   <%--  </c:if></ul> --%>
           </ul>
           
            </div></div>

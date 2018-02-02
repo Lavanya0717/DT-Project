@@ -1,17 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@include file="header.jsp"%>
 <br/><br/>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 <div class="container">
 	<div class="panel-group">
-		<div class="panel panel-success">
+		<div class="panel panel-primary">
 			<div class="panel-heading text-center">
 						<span style="font-size: 30px">Add Details</span>
 			</div>
@@ -25,14 +17,63 @@
 <div class="tab-content">
   <div id="product" class="tab-pane fade in active">
     <br/>
-   <div class="modal-body col-sm-offset-3 col-sm-6" style="border:5px solid pink">
+   <div class="modal-body col-sm-offset-3 col-sm-6" style="border:10px solid green">
 		    <center><h2>Add Product</h2></center><br/>
-			<h3>Product form goes here</h3>
-      </div>
+<form:form action="addProduct" modelAttribute="product" class="form-horizontal" enctype="multipart/form-data">
+<div class="form-group">
+<label class="control-label col-sm-5 " for="catName">Category</label>
+<div class="col-sm-7">
+<form:select path="category.cid" id="catName" class="form-control" required="required">
+<option value="" label="----------- Select Category -----------" disabled="true" selected/>
+					<c:forEach items="${catList}" var="cat">
+					<form:option value="${cat.cid}">${cat.categoryName}</form:option>		
+					</c:forEach>
+</form:select>
+</div></div>
+<div class="form-group">
+<label class="control-label col-sm-5 " for="proName">Product Name</label>
+<div class="col-sm-7">
+<form:input path="proName" class="form-control" id="proName"  required="required"/>
+</div></div>
+<div class="form-group">
+<label class="control-label col-sm-5 " for="proDesc">Product description</label>
+<div class="col-sm-7">
+<form:textarea path="proDesc" class="form-control" id="proDesc" required="required" maxlength="255"/>
+</div></div>
+<div class="form-group">
+<label class="control-label col-sm-5 " for="proImage">Upload image</label>
+<div class="col-sm-7">
+<form:input type="file" path="proImage" class="form-control" id="proImage"/>
+</div></div>
+<div class="form-group">
+<label class="control-label col-sm-5 " for="proPrice">Product Price</label>
+<div class="col-sm-7">
+<form:input path="proPrice" class="form-control" id="proPrice" pattern="[1-9]+[0-9]*" title="Price cannot be zero or start with zero"/>
+</div></div>
+<div class="form-group">
+<label class="control-label col-sm-5 " for="proQuantity">Product Quantity</label>
+<div class="col-sm-7">
+<form:input path="proQuantity" class="form-control" id="proQuantity" pattern="[1-9]+[0-9]*" title="Quantity cannot be zero or start with zero"/>
+</div></div>
+<div class="form-group"><label class="control-label col-sm-5 " for="supName">Supplier</label>
+<div class="col-sm-7">
+<form:select path="supplier.sid" class="form-control" id="supName" required="required">
+<option value="" label="----------- Select Supplier -----------" disabled="true" selected/>
+<c:forEach items="${supList}" var="sup">
+<form:option value="${sup.sid}">${sup.supplierName}</form:option>
+</c:forEach>
+</form:select>
+</div></div>
+<div class="col-sm-6">
+<input type="submit" value="save" class="btn btn-success btn-block "/></div>
+<div class="col-sm-6">
+<a href="Product" class="btn btn-danger btn-block ">Cancel</a></div><br/>
+</form:form>
+     </div>
   </div>
   <div id="category" class="tab-pane fade">
   <br/>
-   <div class="modal-body col-sm-offset-3 col-sm-6" style="border:5px solid pink">
+   <div class="modal-body col-sm-offset-3 col-sm-6" style="border:10px solid green">
 		    <center><h2>Add Category</h2></center><br/>
 			<form action="addCategory" method="post" class="form-inline">
 			<label style="font-size: 20px">Enter Category Name : </label>
@@ -43,7 +84,7 @@
   </div>
   <div id="supplier" class="tab-pane fade">
 <br/>
-   <div class="modal-body col-sm-offset-3 col-sm-6" style="border:5px solid pink">
+   <div class="modal-body col-sm-offset-3 col-sm-6" style="border:10px solid green">
 		    <center><h2>Add Supplier</h2></center><br/>
 			<form action="addSupplier" method="post" class="form-inline">
 			<label style="font-size: 20px">Enter Supplier Name : </label>
@@ -56,7 +97,5 @@
 			</div>
 		</div>
 	</div>
-</div><br/><br/><br/><br/><br/><br/>
+	</div><br/><br/>
 <%@include file="footer.jsp"%>
-</body>
-</html>
