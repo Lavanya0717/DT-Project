@@ -29,6 +29,10 @@ public class indexController {
 		return "supplierManage";
 	}*/
 	
+	@RequestMapping("403Error")
+	public String Error(){
+		return "403";
+	}
 }
 	
 	

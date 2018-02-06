@@ -150,14 +150,18 @@ public class AdminController {
 		return m;
 	}
 	
+	
 	@RequestMapping("/updateProduct")
-	public ModelAndView updateProduct(@RequestParam("proId") int proId)
-	{	ModelAndView m=new ModelAndView("redirect:viewDetailsAdmin");
+	public ModelAndView updateProduct(@RequestParam("proId") int proId){
+		ModelAndView m= new ModelAndView("updateProduct");
 		Product product=productDAO.getProduct(proId);
-		productDAO.insertOrUpdateProduct(product);
+		List<Supplier> supList=supplierDAO.getAllSupplier();
+		m.addObject("supList",supList);
+		List<Category> catList=categoryDAO.getAllCategory();
+		m.addObject("catList",catList);
+		m.addObject("product",product);
 		return m;
 	}
-	
 	
 }
 
