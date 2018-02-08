@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-body" style="padding:50px;border:10px solid green">
 		    <center><h2>Update Category</h2></center><br/>
-			<form id="frm1" action="${e}admin/updateCategory" method="post" class="form-signin">
+			<form id="frm1" action="${e}admin/updateCategory" method="post" class="form-inline">
 			<input name="id" type="hidden"/>
 			<span style="font-size: 20px">Enter Category Name : </span>
 			<input name="name" class="form-control"/><br/><br/>
@@ -21,7 +21,7 @@
     <div class="modal-content">
       <div class="modal-body" style="padding:50px;border:10px solid green">
 			<center><h2>Update Supplier</h2></center><br/>
-			<form id="frm2" action="${e}admin/updateSupplier" method="post" class="form-signin">
+			<form id="frm2" action="${e}admin/updateSupplier" method="post" class="form-inline">
 			<input name="id" type="hidden"/>
 			<span style="font-size: 20px">Enter Supplier Name : </span>
 			<input name="name" class="form-control"/><br/><br/>
