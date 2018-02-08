@@ -20,8 +20,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
  
- 
-    
+     
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>
@@ -35,6 +34,12 @@
   org.springframework.web.context.ContextLoaderListener
   </listener-class>
   </listener>
+  
+  <listener>
+  <listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
+  </listener>
+  
+    
   <filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

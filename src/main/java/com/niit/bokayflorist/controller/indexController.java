@@ -15,40 +15,18 @@ public class indexController {
 		return "index";
 	}
 	
-	/*@RequestMapping("/home")
-	public String home(){
-		return "home";
-	}
 	
-	@RequestMapping("/supplierManage")
-	public String supplierManage(){
-		return "supplierManage";
-	}
-	@RequestMapping("/addSupplier")
-	public String addSupplier(){
-		return "supplierManage";
-	}*/
 	
-	@RequestMapping("403Error")
+	@RequestMapping("error")
 	public String Error(){
-		return "403";
+		return "error";
 	}
 }
 	
 	
 	
 	
-	/*@Autowired
-	 private UserDao userDao;
 	
-	 @RequestMapping(value={"/","/home","/index"})
-	    public ModelAndView index() {
-	        //mapped to hostname:port/home/index/
-		 ModelAndView mv=new ModelAndView("index");
-		 mv.addObject("users",userDao.list());		 		 
-	        return mv;
-	    }*/
-
 
 	
 

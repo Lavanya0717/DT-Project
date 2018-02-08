@@ -1,20 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
 <%@include file="header.jsp"%>
 <br/><br/>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 <div id="catModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body" style="padding:50px;border:10px solid green">
 		    <center><h2>Update Category</h2></center><br/>
-			<form id="frm1" action="updateCategory" method="post" class="form-inline">
+			<form id="frm1" action="${e}admin/updateCategory" method="post" class="form-signin">
 			<input name="id" type="hidden"/>
 			<span style="font-size: 20px">Enter Category Name : </span>
 			<input name="name" class="form-control"/><br/><br/>
@@ -30,7 +21,7 @@
     <div class="modal-content">
       <div class="modal-body" style="padding:50px;border:10px solid green">
 			<center><h2>Update Supplier</h2></center><br/>
-			<form id="frm2" action="updateSupplier" method="post" class="form-inline">
+			<form id="frm2" action="${e}admin/updateSupplier" method="post" class="form-signin">
 			<input name="id" type="hidden"/>
 			<span style="font-size: 20px">Enter Supplier Name : </span>
 			<input name="name" class="form-control"/><br/><br/>
@@ -66,9 +57,9 @@
 <tr>
 <td>${product.proId}</td><td>${product.proName}</td><td>${product.proDesc}</td><td>${product.proPrice}</td><td>${product.proQuantity}</td><td>${product.category.categoryName}</td><td>${product.supplier.supplierName}</td>
 <td>
-<a href="<c:url value="updateProduct?proId=${product.proId}"/>" id="update" class="btn btn-success">Update</a>
+<a href="${e}admin/updateProduct?proId=${product.proId}" id="update" class="btn btn-success">Update</a>
 </td><td>
-<a href="<c:url value="deleteProduct?proId=${product.proId}"/>" class="btn btn-danger myBoldFont">Delete</a>
+<a href="${e}admin/deleteProduct?proId=${product.proId}" class="btn btn-danger myBoldFont">Delete</a>
 </td>
 </tr>
 </c:forEach>
@@ -86,7 +77,7 @@
 							<td>${category.cid}</td><td>${category.categoryName}</td>
 							<td>
 								<button onclick="setCatModal(${category.cid},'${category.categoryName}')" class="btn btn-success myBoldFont">Update</button>
-								<a href="<c:url value="deleteCategory?id=${category.cid}"/>" class="btn btn-danger myBoldFont">Delete</a>
+								<a href="${e}admin/deleteCategory?id=${category.cid}" class="btn btn-danger myBoldFont">Delete</a>
 							</td>
 						</tr>
 					</c:forEach>
@@ -104,7 +95,7 @@
 							<td>${supplier.sid}</td><td>${supplier.supplierName}</td>
 							<td>
 								<button onclick="setSupModal(${supplier.sid},'${supplier.supplierName}')" class="btn btn-success myBoldFont">Update</button>
-								<a href="<c:url value="deleteSupplier?id=${supplier.sid}"/>" class="btn btn-danger myBoldFont">Delete</a>
+								<a href="${e}admin/deleteSupplier?id=${supplier.sid}" class="btn btn-danger myBoldFont">Delete</a>
 							</td>
 						</tr>
 					</c:forEach>
@@ -128,6 +119,4 @@ var setSupModal=function(id,name){
 	$("#supModal").modal("show");
 }
 </script>
-</body>
-</html>
 <%@include file="footer.jsp"%>
