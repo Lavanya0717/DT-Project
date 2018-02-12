@@ -12,9 +12,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <footer>
-<div class="container-fluid" style="padding-top:20px;padding-bottom:20px;background: #ff4062;font-size:20px">
+<div class="container-fluid" style="padding-top:20px;padding-bottom:20px;background:#f48fb1;font-size:20px">
 <div class="col-sm-6 text-center">
-<a href="#" class="footlink">Contact Us</a>
+<a href="#" >Contact Us</a>
 <a href="#" class="footlink">About Us</a>
 </div>
 <div class="col-sm-6 text-center">
@@ -30,4 +30,5 @@
 </footer>
 <!--/.Footer-->
 </body>
+</head>
 </html>

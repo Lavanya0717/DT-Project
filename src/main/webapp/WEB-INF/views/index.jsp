@@ -22,15 +22,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="${pageContext.request.contextPath}/resources/images/slide4.jpg"  alt="Los Angeles" style="height:450px;width:100%;">
+        <img src="${pageContext.request.contextPath}/resources/images/slide4.jpg"  alt="" style="height:450px;width:100%;">
       </div>
 
       <div class="item">
-        <img src="${pageContext.request.contextPath}/resources/images/slide5.jpg"  alt="Chicago" style="height:450px;width:100%;">
+        <img src="${pageContext.request.contextPath}/resources/images/slide5.jpg"  alt="" style="height:450px;width:100%;">
       </div>
     
       <div class="item">
-        <img src="${pageContext.request.contextPath}/resources/images/slide6.jpg"  alt="New york" style="height:450px;width:100%;">
+        <img src="${pageContext.request.contextPath}/resources/images/slide6.jpg"  alt="" style="height:450px;width:100%;">
       </div>
     </div>
 
@@ -53,7 +53,8 @@
 				<a href="#"> <img src="resources/images/flower.jpg"
 					alt="Image 1" style="height:450px;width: 100%">
 					<div class="caption">
-						<p>Image 1</p>
+						<p>Teleflora's Be Happy® Bouquet With Roses</p>
+						<a href="#" class="m-product-mini-buynow homePageEngagement pdplink">Buy Now ></a>
 					</div>
 				</a>
 			</div>
@@ -63,7 +64,8 @@
 				<a href="#"> <img src="resources/images/flower1.jpg"
 					alt="Image 2" style="height:450px;width: 100%">
 					<div class="caption">
-						<p>Image 2</p>
+						<p>Teleflora's Happy Dots Bouquet</p>
+						<a href="#" class="m-product-mini-buynow homePageEngagement pdplink">Buy Now ></a>
 					</div>
 				</a>
 			</div>
@@ -73,7 +75,8 @@
 				<a href="#"> <img src="resources/images/flower2.jpg"
 					alt="Image 3" style="height:450px;width: 100%">
 					<div class="caption">
-						<p>Image 3</p>
+						<p>His Favorite Ford F1 Pickup By Teleflora</p>
+						<a href="#" class="m-product-mini-buynow homePageEngagement pdplink">Buy Now ></a>
 					</div>
 				</a>
 			</div>

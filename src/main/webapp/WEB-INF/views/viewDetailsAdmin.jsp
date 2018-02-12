@@ -1,4 +1,25 @@
 <%@include file="header.jsp"%>
+	<c:if test="${warning!=null}">
+  <div class="modal" id="warningModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center" style="background: #afa">
+         <h1>Warning!!!!!</h1>
+        </div>
+        <div class="modal-body text-center">
+          <h2><b>${warning}</b></h2>
+        </div>
+		<div class="modal-footer">
+          <a href="${e}admin/viewDetailsAdmin" class="btn btn-danger btn-block myBoldFont">Close</a>
+        </div>
+      </div>
+     </div>
+  </div>
+  <script>
+  $('#warningModal').modal("show");
+  </script>
+  </c:if>
+
 <br/><br/>
 <div id="catModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -51,7 +72,16 @@
     <br/>
    <div class="modal-body col-sm-offset-1 col-sm-10" style="border:10px solid green">
 		    <center><h2>Product Details</h2></center><br/>
-<table class="table table-hover myFont">
+		    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" id="searchProduct" onkeyup="searchProduct()">
+        <div class="input-group-btn">
+<select class="btn btn-info" id="searchType">
+    <option value="1">Search by name</option>
+    <option value="2">Search by category</option>
+    <option value="3">Search by supplier</option>
+  </select>        </div>
+      </div>
+<table class="table table-hover myFont" id="productTable">
 <tr><th>Product Id</th><th>Product Name</th><th>Product Description</th><th>Price</th><th>Product Quantity</th><th>Category</th><th>Supplier</th><th colspan="2">Operation</th></tr>
 <c:forEach items="${proList}" var="product">
 <tr>
@@ -117,6 +147,34 @@ var setSupModal=function(id,name){
 	document.forms["frm2"].elements[0].value=id;
 	document.forms["frm2"].elements[1].value=name;
 	$("#supModal").modal("show");
+}
+var searchProduct=function(){
+	var text=$("#searchProduct").val();
+	var type=$("#searchType").val();
+	if(type==1){	
+		$("#productTable tr td:nth-child(2)").each(function() {
+		    if($(this).text().toUpperCase().includes(text.toUpperCase()))
+		    	$(this).closest('tr').show();
+		    else
+		    	$(this).closest('tr').hide();
+		});
+	}
+	else if(type==2){	
+		$("#productTable tr td:nth-child(6)").each(function() {
+		    if($(this).text().toUpperCase().includes(text.toUpperCase()))
+		    	$(this).closest('tr').show();
+		    else
+		    	$(this).closest('tr').hide();
+		});
+	}
+	else if(type==3){	
+		$("#productTable tr td:nth-child(7)").each(function() {
+		    if($(this).text().toUpperCase().includes(text.toUpperCase()))
+		    	$(this).closest('tr').show();
+		    else
+		    	$(this).closest('tr').hide();
+		});
+	}
 }
 </script>
 <%@include file="footer.jsp"%>

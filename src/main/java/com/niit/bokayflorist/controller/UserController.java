@@ -1,5 +1,6 @@
 package com.niit.bokayflorist.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -10,8 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.Dao.CategoryDAO;
 import com.Dao.UserDao;
+import com.Model.Category;
 import com.Model.User;
 
 @Controller
@@ -21,6 +23,9 @@ public class UserController {
 	User user;
 	@Autowired
 	UserDao userDao;
+	
+	@Autowired
+	CategoryDAO categoryDAO;
 	
 	@RequestMapping("/login")
 	public String login(@RequestParam(value="id",required=false) String id,Model m) {
@@ -52,8 +57,11 @@ public class UserController {
 			return "redirect:login?id=3";
 		return "register";
 	}
+	
 	@RequestMapping("/login_success")
 	public String perform_login(@RequestParam Map<String,String> user,Model m,HttpSession httpSession) {
+			List<Category> catList=categoryDAO.getAllCategory();
+			httpSession.setAttribute("categoryList",catList);
 			httpSession.setAttribute("loggedIn", true);
 			return "redirect:/";
 	}

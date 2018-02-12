@@ -87,10 +87,16 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/admin/deleteCategory")
-	public String deleteCategory(@RequestParam int id) {
-		Category category2=categoryDAO.getCategoryById(id);
-		categoryDAO.deleteCategory(category2);
-		return "redirect:viewDetailsAdmin";
+	public ModelAndView deleteCategory(@RequestParam int id) {
+		ModelAndView m = new ModelAndView("redirect:viewDetailsAdmin");
+		Category category2 = categoryDAO.getCategoryById(id);
+		try {
+			categoryDAO.deleteCategory(category2);
+		} catch (Exception e) {
+			m.addObject("warning", "Remove the associated product first!!!");
+			m.setViewName("viewDetailsAdmin");
+		}
+		return m;
 	}
 	
 	@RequestMapping("/admin/addSupplier")
@@ -110,10 +116,16 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/admin/deleteSupplier")
-	public String deleteSupplier(@RequestParam int id) {
-		Supplier supplier2=supplierDAO.getSupplierById(id);
-		supplierDAO.deleteSupplier(supplier2);
-		return "redirect:viewDetailsAdmin";
+	public ModelAndView deleteSupplier(@RequestParam int id) {
+		ModelAndView m = new ModelAndView("redirect:viewDetailsAdmin");
+		Supplier supplier2 = supplierDAO.getSupplierById(id);
+		try {
+			supplierDAO.deleteSupplier(supplier2);
+		} catch (Exception e) {
+			m.addObject("warning", "Remove the associated product first!!!");
+			m.setViewName("viewDetailsAdmin");
+		}
+		return m;
 	}
 	
 	@RequestMapping(value="/admin/addProduct",method=RequestMethod.POST)
@@ -123,27 +135,36 @@ public class AdminController {
 		MultipartFile image=product.getProImage();
 		String imgpath=session.getServletContext().getRealPath("/resources/images/");
 		String file_info=imgpath+image.getOriginalFilename()+".jpg";
-		File f=new File(file_info);
-		if(!image.isEmpty()){
-			try{
-			byte buff[]=image.getBytes();
-			BufferedOutputStream bs=new BufferedOutputStream(new FileOutputStream(f));
-			bs.write(buff);
-			bs.close();
-			product.setImageName(image.getOriginalFilename());
-			productDAO.insertOrUpdateProduct(product);
-			}
-			catch(Exception e){
+		if (!image.isEmpty()) {
+			File f = new File(file_info);
+			try {
+				byte buff[] = image.getBytes();
+				BufferedOutputStream bs = new BufferedOutputStream(new FileOutputStream(f));
+				bs.write(buff);
+				bs.close();
+				product.setImageName(image.getOriginalFilename());
+				productDAO.insertOrUpdateProduct(product);
+			} catch (Exception e) {
 				System.out.println("Exception");
 			}
+		} else {
+			productDAO.insertOrUpdateProduct(product);
+
 		}
 		return m;
 	}
+	
+	
 	@RequestMapping("/admin/deleteProduct")
-	public ModelAndView deleteProduct(@RequestParam("proId") int proId)
-	{	ModelAndView m=new ModelAndView("redirect:viewDetailsAdmin");
-		Product product=productDAO.getProduct(proId);
-		productDAO.deleteProduct(product);
+	public ModelAndView deleteProduct(@RequestParam("proId") int proId) {
+		ModelAndView m = new ModelAndView("redirect:viewDetailsAdmin");
+		Product product = productDAO.getProduct(proId);
+		try {
+			productDAO.deleteProduct(product);
+		} catch (Exception e) {
+			m.addObject("warning", "You cannot delete this product!!!");
+			m.setViewName("viewDetailsAdmin");
+		}
 		return m;
 	}
 	
